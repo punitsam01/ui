@@ -1,0 +1,41 @@
+<div style="background-color: cornflowerblue; font-style: italic; padding-left: 275px;">
+    <table>
+      <tr>
+        <td><div style="padding-left: 650px; color: cornsilk;">
+            <h1>Object Model Analyzer <i class="fa fa-cogs fa-2x"></i></h1>  
+        </div></td>
+       
+      </tr>
+    </table>
+  </div>
+
+<table>
+    <tr >
+        <td style="padding-top: 10px">
+            <input type="file" #fileImportInput name="File Upload" id="txtFileUpload" class="btn btn-primary"
+                (change)="fileChangeListener($event)" accept=".csv" value={{selectedImageFile}} />
+        </td>
+        <td style="padding-left: 10px; padding-top: 10px">
+            <input type="button" name="Reset" id="txtFileReset" class="btn btn-primary" (click)="fileReset()"
+                value="Reset" />
+        </td>
+    </tr>
+</table>
+
+<div style="padding-top: 10px">
+    <table class="table table-responsive table-hover table-bordered" >
+        <tbody>
+            <ng-container *ngFor="let csvRec of csvRecords;let i=index">
+                <tr>
+                    <ng-container *ngFor="let data of csvRec;let j=index"> 
+                        <td *ngIf="j!=0">{{data}}</td> 
+                        <td *ngIf="j==0 && i==0">{{data}}</td> 
+                        <td *ngIf="j==0 && i!=0"><input type="button" value='Analyse' class="btn btn-secondary" (click)="myClick(data)" />{{data}}
+                        </td> 
+                    </ng-container>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div>
+
