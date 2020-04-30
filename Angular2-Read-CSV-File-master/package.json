@@ -19,7 +19,7 @@
     "@angular/router": "3.3.0",
     "bootstrap": "3.3.7",
     "core-js": "2.4.1",
-    "jquery": "^2.0.41",
+    "jquery": "^3.5.0",
     "rxjs": "5.0.0-rc.4",
     "rxjs-compat": "^6.4.0",
     "zone.js": "0.7.2"
